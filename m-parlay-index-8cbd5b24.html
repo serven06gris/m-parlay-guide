@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>串关笔记 · 足球串关简明指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f7f5f2;
+            color: #1e1e1e;
+            line-height: 1.7;
+        }
+
+        /* 深色头图 — 故事感 */
+        .hero {
+            background: linear-gradient(145deg, #0c0e12 0%, #1a1d25 100%);
+            color: #ece7e0;
+            padding: 5rem 2rem 4.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #b89b6a;
+            opacity: 0.4;
+        }
+
+        .hero-sub {
+            font-size: 0.95rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #b89b6a;
+            margin-bottom: 0.75rem;
+            font-weight: 400;
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 350;
+            line-height: 1.25;
+            max-width: 680px;
+            margin: 0 auto 1.2rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #c8c3b9;
+            font-weight: 300;
+        }
+
+        /* 正文区：浅色、宽松 */
+        .content {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 3.2rem 2rem 4.5rem;
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            margin-bottom: 2.8rem;
+            border-left: 3px solid #b89b6a;
+            padding-left: 1.5rem;
+            color: #2f2d2b;
+        }
+
+        .intro a {
+            color: #946c3c;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-weight: 500;
+        }
+
+        .intro a:hover {
+            color: #6f4f2e;
+            text-decoration-thickness: 2px;
+        }
+
+        .section-heading {
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            margin: 2.8rem 0 1.4rem;
+            color: #1e1b17;
+            border-bottom: 1px solid #ddd8cf;
+            padding-bottom: 0.5rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.8rem;
+            margin: 2rem 0 2.5rem;
+        }
+
+        .feature-card {
+            background: #ffffff;
+            padding: 1.6rem 1.4rem;
+            border-radius: 14px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 4px rgba(0, 0, 0, 0.04);
+            transition: box-shadow 0.2s, transform 0.15s;
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
+            transform: translateY(-2px);
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            font-weight: 450;
+            margin-bottom: 0.7rem;
+            color: #1e1b17;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: #484440;
+            line-height: 1.6;
+        }
+
+        .highlight-link {
+            background: #f5f0ea;
+            padding: 1.2rem 1.8rem;
+            border-radius: 40px;
+            display: inline-block;
+            font-size: 0.95rem;
+            color: #2b2824;
+            border: 1px solid #ddd8cf;
+            transition: background 0.2s, border-color 0.2s;
+            margin: 0.8rem 0;
+        }
+
+        .highlight-link a {
+            color: #946c3c;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #b89b6a;
+        }
+
+        .highlight-link a:hover {
+            color: #6f4f2e;
+            border-bottom-style: solid;
+        }
+
+        .scenario-note {
+            background: #f2efe9;
+            padding: 1.8rem 2rem;
+            border-radius: 18px;
+            margin: 2.5rem 0;
+            font-size: 0.98rem;
+            color: #2f2c27;
+            border-left: 4px solid #b89b6a;
+        }
+
+        .faq-mini {
+            margin: 2.2rem 0 1rem;
+        }
+
+        .faq-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #e6dfd6;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #2b2824;
+            margin-bottom: 0.3rem;
+        }
+
+        .faq-a {
+            color: #53504b;
+            font-size: 0.95rem;
+        }
+
+        .gentle-end {
+            margin-top: 3.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid #ddd8cf;
+            font-size: 0.98rem;
+            color: #4f4b46;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .gentle-end a {
+            color: #946c3c;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            .hero {
+                padding: 3.5rem 1.2rem 3rem;
+            }
+
+            .content {
+                padding: 2rem 1.2rem 3rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .scenario-note {
+                padding: 1.2rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-sub">串关手记 · 从理解到习惯</div>
+        <h1 class="hero-title">关于足球串关，<br>一些平实的叙述</h1>
+        <p>不是鼓吹，也不是教程，更像一份指向清晰的路标。适合想安静了解串关框架的人。</p>
+    </header>
+
+    <main class="content">
+        <div class="intro">
+            <p>几年前刚开始接触串关概念时，总觉得信息散乱。后来慢慢发现，真正有用的不是花哨技巧，而是一套稳定的理解方式。这个页面记录了一些基础想法，也作为通往 <a href="https://m-parlay.com">足球串关</a> 的便签 —— 那里有更完整的讨论和场景。</p>
+        </div>
+
+        <h2 class="section-heading">串联逻辑 · 四个基本点</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>场次选择</h3>
+                <p>串关的本质是组合，而非堆叠。每加入一场比赛，整体结构的复杂度都会变化。优先理解每一场的独立逻辑，再谈串联。</p>
+            </div>
+            <div class="feature-card">
+                <h3>风险递进</h3>
+                <p>串数增加不直接等于收益放大，更多时候是概率边界的推移。保持对数字的朴素感知，比追求高串数更实际。</p>
+            </div>
+            <div class="feature-card">
+                <h3>信息权重</h3>
+                <p>赛前数据、球队状态、赛程密度……这些不是万能公式，但能为判断提供可讨论的支点。把主观感受和客观信息分开。</p>
+            </div>
+            <div class="feature-card">
+                <h3>节奏控制</h3>
+                <p>频繁调整串关方式容易让人迷失。固定一种符合自身习惯的串关逻辑，长期执行，比不断切换策略更有效。</p>
+            </div>
+        </div>
+
+        <div class="scenario-note">
+            <p><strong>一个常见的时刻：</strong> 周末赛事密集，你看着五六场对阵，觉得每场都有依据。这时候反而值得停下来——用更少的场次、更清晰的依据，先完成一组基础串关。多数人不是输在分析，而是输在分心。</p>
+            <p style="margin-top: 0.8rem;">这也是我为什么经常回看 <a href="https://m-parlay.com" style="color:#946c3c; text-decoration: underline; text-underline-offset:2px;">足球串关</a> 的原因：那里保留了一种不着急的审视方式。</p>
+        </div>
+
+        <h2 class="section-heading">一些常被问到的</h2>
+        <div class="faq-mini">
+            <div class="faq-item">
+                <div class="faq-q">串关应该从几场开始？</div>
+                <div class="faq-a">对多数人来说，2 到 3 场是比较自然的开始。先建立对串联后概率变化的直觉，再尝试延长串数。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">数据网站和社区信息怎么用？</div>
+                <div class="faq-a">把它们当作素材，而不是结论。同一场比赛可以找到互相矛盾的解读，关键是形成自己的判断序列。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">什么时候应该暂停串关？</div>
+                <div class="faq-a">当连续几次感觉「运气明显不好」或「每场都差一点」时，暂时退出，重新观察。情绪波动下的串关容易变形。</div>
+            </div>
+        </div>
+
+        <div class="gentle-end">
+            <p>足球串关说到底只是一种组合方式，它不神秘，也不需要被神化。保持对比赛本身的兴趣，比任何串关技巧都持久。</p>
+            <p style="margin-top: 1rem;">如果你愿意，可以偶尔看看 <a href="https://m-parlay.com">足球串关</a> —— 那里没有喧哗，只有持续整理的笔记。</p>
+        </div>
+    </main>
+
+</body>
+</html>
